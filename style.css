@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #12181B;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5%;
+}
+.title span {
+    color: #606767;
+  }
+.status{
+    margin: 20px;
+    text-align: center;
+    color: #606767;
+    font-weight:bolder;
+    font-size: 25px;
+}
+.winnerX{
+    color: rgb(96, 18, 18);
+}
+.winnerO{
+    color: rgb(13, 13, 96);
+}
+
+.game-grid {
+    margin: 0 auto;
+    background: #606767;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-top: 50px;
+    max-width: 300px;
+  }
+  
+.game-cell {
+    background:#12181B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* min-width: 100px;
+    min-height: 100px; */
+    height: 100px;
+    width: 100px;
+}
+
+.X::after{
+    content: 'X';
+    font-size: 90px;
+    color: rgb(96, 18, 18);
+}
+.O::after{
+    content: 'O';
+    font-size: 90px;
+    color: rgb(13, 13, 96);
+}
+.won::after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    background-color:aliceblue;
+}
+.reset{
+    margin: 30px;
+    text-align: center;
+    color: #606767;
+    font-weight:bolder;
+    font-size: 25px;
+    cursor: pointer;
+}
+.reset:hover{
+    color:  white;
+}
