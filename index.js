@@ -74,7 +74,7 @@ const checkGameStatus = () => {
       }else{ // if we don't have a winner and all the cells are not filled yet
         xIsNext= !xIsNext;
         if(xIsNext){
-            statusDiv.innerHTML="Player X's turn";
+            statusDiv.innerHTML="Player X's turn"; //changing the html of current player
         }else{
             statusDiv.innerHTML="Player O's turn";
         }
@@ -85,31 +85,31 @@ const handleReset=()=>{ //function to perform reset
     xIsNext=true;
     statusDiv.innerHTML="Player X's turn";
     for(const cellDiv of cellDivs){
-        cellDiv.classList.remove('X');
-        cellDiv.classList.remove('O');
-        cellDiv.classList.remove('won');
+        cellDiv.classList.remove('X');   //removing all the X from game-grid
+        cellDiv.classList.remove('O');  //removing all the O from game-grid
+        cellDiv.classList.remove('won'); //removing the won effect if the game was reset after winning
     }
     gameIsLive=true;
 };
 
-const handleCellClick=(e)=>{
+const handleCellClick=(e)=>{  //adding X and O to the cell class which will help further in adding to the game grid by using CSS
     const classList=e.target.classList;
-    if (!gameIsLive || classList[1] === 'X' || classList[1] === 'O') {
+    if (!gameIsLive || classList[1] === 'X' || classList[1] === 'O') { //if it alrady contain's a X or O then it should not change and do nothing
         return;
       }
     if(xIsNext){
-        classList.add('X');
-        checkGameStatus();
+        classList.add('X'); 
+        checkGameStatus(); //call to check whether after this turn there is a winner 
     }
     else{
         classList.add('O');
-        checkGameStatus();
+        checkGameStatus();  //call to check whether after this turn there is a winner 
     }
 };
 
 //EVENT LISTENER
 resetDiv.addEventListener('click',handleReset);
 
-for(const cellDiv of cellDivs){
+for(const cellDiv of cellDivs){  //will loop through the game-cells for 9 times or till there is a winner
     cellDiv.addEventListener('click',handleCellClick);
 } 

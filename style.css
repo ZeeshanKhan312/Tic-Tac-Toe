@@ -45,19 +45,17 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    /* min-width: 100px;
-    min-height: 100px; */
     height: 100px;
     width: 100px;
 }
 
-.X::after{
-    content: 'X';
+.X::after{  /* if the class contains X  coming from js logic*/
+    content: 'X'; /* will add X in the game-cell */
     font-size: 90px;
     color: rgb(96, 18, 18);
 }
-.O::after{
-    content: 'O';
+.O::after{  /* if the class contains X  coming from js logic*/
+    content: 'O';  /* will add O in the game-cell */
     font-size: 90px;
     color: rgb(13, 13, 96);
 }
@@ -67,7 +65,7 @@
     align-items: center;
     height: 100px;
     width: 100px;
-    background-color:aliceblue;
+    background-color:aliceblue;  /* will change the backgroung of selected wining game-cells */
 }
 .reset{
     margin: 30px;
